@@ -1,0 +1,17 @@
+\documentclass[border=2px]{standalone}
+
+\usepackage[braket, qm]{qcircuit}
+\usepackage{graphicx}
+
+\begin{document}
+\scalebox{1.0}{
+\Qcircuit @C=1.0em @R=0.2em @!R { \\
+			&&&&&\mbox{QST}_b&&& & \mbox{QST}_{WZ}&\\
+	 	\nghost{{q94}_{0} :  } & \lstick{a : \vert0\rangle } & \qw & \qw & \multigate{1}{\mathrm{PBS}_A} \barrier[0em]{5} & \qw & \qw & \qw & \qw \barrier[0em]{5} & \qw & \qw & \qw\\
+	 	\nghost{{q94}_{1} :  } & \lstick{A : \vert0\rangle } & \multigate{1}{\mathrm{BBO}^{\prime}} & \gate{\mathrm{QWP}_{out} \mbox{ or } \mathrm{QWP}_{in} } & \ghost{\mathrm{PBS}_A} & \qw & \qw & \qw & \qw & \qw & \qw & \qw\\
+	 	\nghost{{q94}_{2} :  } & \lstick{B : \vert0\rangle } & \ghost{\mathrm{BBO}^{\prime}} & \multigate{1}{\mathrm{PBS}} & \multigate{1}{\mathrm{HWP}} & \qw & \qw & \qw & \qw & \qw & \qw & \qw\\
+	 	\nghost{{q94}_{3} :  } & \lstick{b : \vert0\rangle } & \qw & \ghost{\mathrm{PBS}} & \ghost{\mathrm{HWP}} & \qw & \multigate{2}{\mathrm{PAI}} & \gate{\mathrm{M}} & \gate{\mathrm{BS}} & \qw & \qw & \qw\\
+	 	\nghost{{q94}_{4} :  } & \lstick{W : \vert0\rangle } & \gate{\mathrm{X}} & \qw & \qw & \qw & \ghost{\mathrm{PAI}} & \qw & \qw & \qw & \qw & \qw\\
+	 	\nghost{{q94}_{5} :  } & \lstick{Z : \vert0\rangle } & \gate{\mathrm{X}} & \qw & \qw & \qw & \ghost{\mathrm{PAI}} & \qw & \qw & \qw & \qw & \qw\\
+\\ }}
+\end{document}
